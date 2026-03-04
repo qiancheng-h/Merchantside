@@ -1,0 +1,9 @@
+:root {
+  --primary-color: #006738;
+}
+
+/* Table header: white background to contrast with gray page */
+.ant-table-thead>tr>th,
+.ant-table-thead>tr>td {
+  background-color: #ffffff !important;
+}

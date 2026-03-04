@@ -1,0 +1,41 @@
+import { reactive } from 'vue'
+
+export interface MedicalBranch {
+  id: string
+  name: string
+  address: string
+  createTime: string
+}
+
+export const medicalBranches = reactive<MedicalBranch[]>([
+  {
+    id: '1',
+    name: '美年大健康黄龙分院',
+    address: '浙江省杭州市西湖区黄龙综合体育中心1楼',
+    createTime: '2026-02-15 10:00:00',
+  },
+  {
+    id: '2',
+    name: '美年大健康西溪分院',
+    address: '浙江省杭州市西湖区文一西路83号西溪诚园4号楼',
+    createTime: '2026-02-16 11:30:00',
+  },
+  {
+    id: '3',
+    name: '美年大健康滨江分院',
+    address: '浙江省杭州市滨江区江南大道100号星光大道二期',
+    createTime: '2026-02-18 09:15:00',
+  },
+  {
+    id: '4',
+    name: '美年大健康武林广场分院',
+    address: '浙江省杭州市拱墅区环城北路208号坤和中心',
+    createTime: '2026-02-20 14:00:00',
+  },
+  {
+    id: '5',
+    name: '美年大健康钱江新城分院',
+    address: '浙江省杭州市上城区市民街200号圣奥中央商务大厦',
+    createTime: '2026-02-22 16:45:00',
+  }
+])
