@@ -342,8 +342,8 @@ const submitUpdate = () => {
               <div class="category-items">
                 <a-form-item label="停车场" class="inline-form-item">
                   <div class="flex-align">
-                    <a-switch v-model:checked="formState.hotelFacilities.traffic.parking" />
-                    <a-radio-group v-if="formState.hotelFacilities.traffic.parking" v-model:value="formState.hotelFacilities.traffic.parkingType" style="margin-left: 16px;">
+                    <a-switch v-model:checked="formState.hotelFacilities!.traffic.parking" />
+                    <a-radio-group v-if="formState.hotelFacilities!.traffic.parking" v-model:value="formState.hotelFacilities!.traffic.parkingType" style="margin-left: 16px;">
                       <a-radio value="free">免费停车</a-radio>
                       <a-radio value="paid">收费停车</a-radio>
                     </a-radio-group>
@@ -351,8 +351,8 @@ const submitUpdate = () => {
                 </a-form-item>
                 <a-form-item label="充电桩" class="inline-form-item">
                   <div class="flex-align">
-                    <a-switch v-model:checked="formState.hotelFacilities.traffic.chargingStation" />
-                    <a-radio-group v-if="formState.hotelFacilities.traffic.chargingStation" v-model:value="formState.hotelFacilities.traffic.chargingStationType" style="margin-left: 16px;">
+                    <a-switch v-model:checked="formState.hotelFacilities!.traffic.chargingStation" />
+                    <a-radio-group v-if="formState.hotelFacilities!.traffic.chargingStation" v-model:value="formState.hotelFacilities!.traffic.chargingStationType" style="margin-left: 16px;">
                       <a-radio value="free">免费充电</a-radio>
                       <a-radio value="paid">收费充电</a-radio>
                     </a-radio-group>
@@ -364,9 +364,9 @@ const submitUpdate = () => {
             <div class="facility-category">
               <div class="category-name"><span class="vertical-line"></span>前台服务</div>
               <div class="category-items flex-row-items">
-                <a-checkbox v-model:checked="formState.hotelFacilities.frontDesk.twentyFourHour">24小时前台</a-checkbox>
-                <a-checkbox v-model:checked="formState.hotelFacilities.frontDesk.luggageStorage">行李寄存(免费)</a-checkbox>
-                <a-checkbox v-model:checked="formState.hotelFacilities.frontDesk.concierge">礼宾服务</a-checkbox>
+                <a-checkbox v-model:checked="formState.hotelFacilities!.frontDesk.twentyFourHour">24小时前台</a-checkbox>
+                <a-checkbox v-model:checked="formState.hotelFacilities!.frontDesk.luggageStorage">行李寄存(免费)</a-checkbox>
+                <a-checkbox v-model:checked="formState.hotelFacilities!.frontDesk.concierge">礼宾服务</a-checkbox>
               </div>
             </div>
 
@@ -374,10 +374,10 @@ const submitUpdate = () => {
               <div class="category-name"><span class="vertical-line"></span>餐饮设施</div>
               <div class="category-items">
                 <a-form-item label="早餐供应" class="inline-form-item">
-                  <a-switch v-model:checked="formState.hotelFacilities.dining.breakfast" />
+                  <a-switch v-model:checked="formState.hotelFacilities!.dining.breakfast" />
                 </a-form-item>
                 <a-form-item label="餐厅" class="inline-form-item">
-                  <a-switch v-model:checked="formState.hotelFacilities.dining.restaurant" />
+                  <a-switch v-model:checked="formState.hotelFacilities!.dining.restaurant" />
                 </a-form-item>
               </div>
             </div>
@@ -387,13 +387,13 @@ const submitUpdate = () => {
               <div class="category-items">
                 <div style="margin-bottom: 16px;">
                   <span style="display: inline-block; width: 80px; text-align: right; margin-right: 16px;">网络设施</span>
-                  <a-checkbox v-model:checked="formState.hotelFacilities.entertainment.publicWifi">公共区WIFI</a-checkbox>
-                  <a-checkbox v-model:checked="formState.hotelFacilities.entertainment.roomWifi">客房WIFI</a-checkbox>
+                  <a-checkbox v-model:checked="formState.hotelFacilities!.entertainment.publicWifi">公共区WIFI</a-checkbox>
+                  <a-checkbox v-model:checked="formState.hotelFacilities!.entertainment.roomWifi">客房WIFI</a-checkbox>
                 </div>
                 <a-form-item label="游泳池" class="inline-form-item">
                   <div class="flex-align">
-                    <a-switch v-model:checked="formState.hotelFacilities.entertainment.pool" />
-                    <a-radio-group v-if="formState.hotelFacilities.entertainment.pool" v-model:value="formState.hotelFacilities.entertainment.poolType" style="margin-left: 16px;">
+                    <a-switch v-model:checked="formState.hotelFacilities!.entertainment.pool" />
+                    <a-radio-group v-if="formState.hotelFacilities!.entertainment.pool" v-model:value="formState.hotelFacilities!.entertainment.poolType" style="margin-left: 16px;">
                       <a-radio value="free">免费畅游</a-radio>
                       <a-radio value="paid">收费使用</a-radio>
                     </a-radio-group>
@@ -401,8 +401,8 @@ const submitUpdate = () => {
                 </a-form-item>
                 <a-form-item label="健身房" class="inline-form-item">
                   <div class="flex-align">
-                    <a-switch v-model:checked="formState.hotelFacilities.entertainment.gym" />
-                    <a-radio-group v-if="formState.hotelFacilities.entertainment.gym" v-model:value="formState.hotelFacilities.entertainment.gymType" style="margin-left: 16px;">
+                    <a-switch v-model:checked="formState.hotelFacilities!.entertainment.gym" />
+                    <a-radio-group v-if="formState.hotelFacilities!.entertainment.gym" v-model:value="formState.hotelFacilities!.entertainment.gymType" style="margin-left: 16px;">
                       <a-radio value="free">免费使用</a-radio>
                       <a-radio value="paid">收费使用</a-radio>
                     </a-radio-group>

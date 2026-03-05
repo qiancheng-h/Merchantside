@@ -84,6 +84,7 @@ const handleModalOk = () => {
           // Reflect back to mock
           const mockIdx = medicalBranches.findIndex(m => m.id === formState.id)
           if(mockIdx !== -1 && medicalBranches[mockIdx]) {
+            // Using non-null assertion since we verified mockIdx exists
             medicalBranches[mockIdx]!.name = formState.name
             medicalBranches[mockIdx]!.address = formState.address
           }

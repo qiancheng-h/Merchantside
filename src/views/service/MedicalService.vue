@@ -52,7 +52,7 @@ const columns: TableColumnsType = [
 const data = ref<ServiceItem[]>([
   {
     key: '1',
-    name: '五星体检-不限-门诊体检',
+    name: '五星体检-通用-门诊体检',
     merchant: '某某体检中心',
     price: 1299,
     gender: 'all',
@@ -63,7 +63,7 @@ const data = ref<ServiceItem[]>([
   },
   {
     key: '2',
-    name: '四星体检-不限-住宿体检',
+    name: '四星体检-通用-住宿体检',
     merchant: '健康管理中心',
     price: 2580,
     gender: 'all',
@@ -74,7 +74,7 @@ const data = ref<ServiceItem[]>([
   },
   {
     key: '3',
-    name: '三星体检-不限-门诊体检',
+    name: '三星体检-通用-门诊体检',
     merchant: '某某体检中心',
     price: 399,
     gender: 'all',
@@ -85,7 +85,7 @@ const data = ref<ServiceItem[]>([
   },
   {
     key: '4',
-    name: '三星体检-不限-门诊体检',
+    name: '三星体检-通用-门诊体检',
     merchant: '健康管理中心',
     price: 680,
     gender: 'all',
