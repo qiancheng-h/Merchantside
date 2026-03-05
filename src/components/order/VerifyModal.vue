@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import { message } from 'ant-design-vue'
 import type { OrderItem } from '@/mock/orderData'
 
 const props = defineProps<{

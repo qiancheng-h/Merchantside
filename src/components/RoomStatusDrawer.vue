@@ -33,7 +33,6 @@ watch(
 );
 
 const monthLabel = computed(() => {
-  const d = new Date(currentYear.value, currentMonth.value, 1);
   return `${currentYear.value}年${currentMonth.value + 1}月`;
 });
 

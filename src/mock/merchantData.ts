@@ -117,4 +117,4 @@ const defaultList: MerchantInfo[] = [
 
 export const merchantList = ref<MerchantInfo[]>([...defaultList]);
 // For MainLayout backward compatibility
-export const merchantInfo = ref<MerchantInfo>({ ...defaultList[0] });
+export const merchantInfo = ref<MerchantInfo>({ ...defaultList[0]! });

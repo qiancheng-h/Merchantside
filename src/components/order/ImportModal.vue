@@ -36,13 +36,6 @@ const handleDownloadTemplate = () => {
   message.success(`${typeLabel[props.orderType]}导入模板已下载（模拟）`)
 }
 
-const handleFileChange = (info: any) => {
-  if (info.file.status === 'uploading') {
-    uploading.value = true
-    fileName.value = info.file.name
-  }
-}
-
 const handleBeforeUpload = (file: File) => {
   if (!file.name.endsWith('.xlsx') && !file.name.endsWith('.xls')) {
     message.error('仅支持 .xlsx / .xls 格式')
