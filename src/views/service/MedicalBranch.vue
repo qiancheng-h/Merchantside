@@ -79,8 +79,10 @@ const handleModalOk = () => {
       if (isEdit.value) {
         const idx = data.value.findIndex(item => item.id === formState.id)
         if (idx !== -1) {
-          data.value[idx].name = formState.name
-          data.value[idx].address = formState.address
+          // 用局部变量持有元素引用，避免数组下标访问时 TS 报 possibly undefined
+          const item = data.value[idx]!
+          item.name = formState.name
+          item.address = formState.address
           // Reflect back to mock
           const mockIdx = medicalBranches.findIndex(m => m.id === formState.id)
           if(mockIdx !== -1 && medicalBranches[mockIdx]) {

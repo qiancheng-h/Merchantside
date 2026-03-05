@@ -1,10 +1,23 @@
 <script setup lang="ts">
 import { ref, reactive, shallowRef, onBeforeUnmount } from 'vue';
 import { message } from 'ant-design-vue';
-import { PlusOutlined, EditOutlined, UploadOutlined, InfoCircleOutlined, ShopOutlined } from '@ant-design/icons-vue';
+import { EditOutlined, UploadOutlined, InfoCircleOutlined, ShopOutlined } from '@ant-design/icons-vue';
 import { merchantList, type MerchantInfo } from '@/mock/merchantData';
 import '@wangeditor/editor/dist/css/style.css';
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue';
+
+// 定义严格的酒店设施类型，所有子字段均为必填，确保 formState 中不会出现 possibly undefined
+interface FormHotelFacilities {
+  traffic: { parking: boolean; parkingType: 'free' | 'paid'; chargingStation: boolean; chargingStationType: 'free' | 'paid' };
+  frontDesk: { twentyFourHour: boolean; luggageStorage: boolean; concierge: boolean };
+  dining: { breakfast: boolean; restaurant: boolean };
+  entertainment: { publicWifi: boolean; roomWifi: boolean; pool: boolean; poolType: 'free' | 'paid'; gym: boolean; gymType: 'free' | 'paid' };
+}
+
+// 本地表单类型：hotelFacilities 整体可选，但存在时子字段均为必填
+type MerchantFormState = Omit<MerchantInfo, 'id' | 'hotelFacilities'> & {
+  hotelFacilities?: FormHotelFacilities;
+};
 
 // ─── Table Config ───────────────────────────────────────────────────────────
 const columns = [
@@ -26,7 +39,7 @@ const regions = [
   '绍兴市', '金华市', '衢州市', '舟山市', '台州市', '丽水市'
 ];
 
-const defaultFormState: Omit<MerchantInfo, 'id'> = {
+const defaultFormState: MerchantFormState = {
   name: '',
   category: '酒店类',
   region: '杭州市',
@@ -65,7 +78,7 @@ const defaultFormState: Omit<MerchantInfo, 'id'> = {
   }
 };
 
-const formState = reactive({ ...defaultFormState });
+const formState = reactive<MerchantFormState>({ ...defaultFormState });
 
 // ─── Wang Editor instances ───────────────────────────────────────────────────────────
 const editorRef = shallowRef();
@@ -142,16 +155,6 @@ const beforeUploadGen = (fileListRef: any) => (file: File) => {
 };
 
 // ─── Actions ──────────────────────────────────────────────────────────────────────
-const openAdd = () => {
-  isEditingId.value = null;
-  Object.assign(formState, defaultFormState);
-  valueHtml.value = '';
-  licenseFileList.value = [];
-  agreementFileList.value = [];
-  specialFileList.value = [];
-  visible.value = true;
-};
-
 const openEdit = (record: MerchantInfo) => {
   isEditingId.value = record.id;
   Object.assign(formState, JSON.parse(JSON.stringify(record))); // Deep copy for nested objects
