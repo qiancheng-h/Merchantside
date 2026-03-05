@@ -112,7 +112,7 @@ const handleTabChange = (key: string) => {
 
     <!-- Tabs Navigation -->
     <div style="background: #fff; padding: 0 24px; margin-bottom: 24px;">
-      <a-tabs @change="handleTabChange">
+      <a-tabs @tabClick="handleTabChange">
         <a-tab-pane key="medical" tab="体检服务管理" />
         <a-tab-pane key="hotel" tab="酒店房型管理" />
         <a-tab-pane key="booking" tab="预定服务类管理" />
